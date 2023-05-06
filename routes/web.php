@@ -33,4 +33,12 @@ Route::resource('chirps', ChirpController::class)
     ->only(['index','store','edit','update','destroy'])
     ->middleware(['auth']);
 
+// learn from scratch
+Route::get('/greeting', function(){
+    return 'Hello World!';
+});
+Route::get('/user/{id?}', function(string $id = null){
+    return 'User '.$id;
+});
+
 require __DIR__.'/auth.php';
